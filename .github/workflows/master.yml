@@ -17,4 +17,4 @@ jobs:
         server: de3.fcomet.com
         username: ${{ secrets.ftp_username}}
         password: ${{ secrets.ftp_password }}
-        server-dir: /public_html/creativestheme.com/
+        server-dir: /creativestheme.com/
