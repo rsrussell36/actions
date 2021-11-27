@@ -14,7 +14,7 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
-        server: de3.fcomet.com
+        server: 108.179.235.109
         username: ${{ secrets.ftp_username}}
         password: ${{ secrets.ftp_password }}
         server-dir: /creativestheme.com/
