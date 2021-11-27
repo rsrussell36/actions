@@ -19,7 +19,7 @@
         "continuous integration",
         "ftps"
     ],
-    "author": "Russell",
+    "author": "rsrussell36",
     "license": "MIT",
     "dependencies": {
         "@actions/core": "^1.6.0",
