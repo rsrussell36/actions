@@ -1,0 +1,1 @@
+1. remove banner bottom clients_logo_inner section

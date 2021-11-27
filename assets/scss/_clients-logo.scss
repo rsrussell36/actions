@@ -1,0 +1,19 @@
+/*========== clients_logo_inner css ===========*/
+.clients_logo_inner {
+  .clients_logo {
+    display: block;
+    text-align: center;
+    padding: 15px;
+    img {
+      display: inline-block;
+      transition: all 0.2s linear;
+      max-width: 100%;
+    }
+    &:hover {
+      img {
+        opacity: 0.5;
+      }
+    }
+  }
+}
+/*========== clients_logo_inner css ===========*/

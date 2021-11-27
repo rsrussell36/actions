@@ -1,0 +1,62 @@
+.video_btn_two {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: $blue;
+  margin-left: 30px;
+  transition: color 0.2s linear;
+  .icon {
+    text-align: center;
+    width: 38px;
+    height: 38px;
+    border: 2px solid $blue;
+    border-radius: 50%;
+    font-size: 20px;
+    line-height: 38px;
+    color: $blue;
+    margin-right: 10px;
+    transition: all 0.2s;
+  }
+  &:hover {
+    color: $black;
+    .icon {
+      background: $blue;
+      color: #fff;
+    }
+  }
+}
+
+.theme_btn {
+  font-size: 14px;
+  color: #fff;
+  background: $blue;
+  line-height: 30px;
+  border-radius: 45px;
+  padding: 15px 59px;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  font-weight: 600;
+  box-shadow: 0px 10px 35px 0px rgba(48, 191, 255, 0.2);
+  transition: color 0.3s linear;
+  overflow: hidden;
+  span {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: #076cec;
+    transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+  &:hover {
+    color: #fff;
+    span {
+      width: 60rem;
+      height: 60rem;
+    }
+  }
+}
