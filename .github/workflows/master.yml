@@ -1,20 +1,21 @@
+name: 🚀 Deploy website on push
+description: "Automate deploying websites and more with this GitHub action via FTP and FTPS"
 on:
   push:
     branches:
       - main
-name: 🚀 Deploy website on push
 jobs:
-  web-deploy:
+  build:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v2.3.2
     
-    - name: 📂 Sync files
+    - name: 📂 FTP Deploy to Dev Server
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
-        server: 108.179.235.109
-        username: ${{ secrets.ftp_username}}
-        password: ${{ secrets.ftp_password }}
-        server-dir: /creativestheme.com/
+        ftp-server: 108.179.235.109
+        ftp-username: ${{ secrets.ftp_username}}
+        ftp-password: ${{ secrets.ftp_password }}
+        local-dir: /www/actions/
