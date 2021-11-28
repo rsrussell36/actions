@@ -1,5 +1,4 @@
 name: 🚀 Deploy website on push
-description: "Automate deploying websites and more with this GitHub action via FTP and FTPS"
 on:
   push:
     branches:
