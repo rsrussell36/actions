@@ -6,7 +6,9 @@ on:
 jobs:
   build:
     name: 🎉 Deploy
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
+    environment: 'russell'
+    needs: build-and-publish
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v2.3.2
