@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: 
       name: Development
-      url: 'https://creativestheme.com'
+      url: 'https://creativestheme.com/'
     steps:
       - name: 📂 FTP Deploy to WP Server
         uses: SamKirkland/FTP-Deploy-Action@4.2.0
