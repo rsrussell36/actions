@@ -24,9 +24,6 @@ jobs:
       name: Development
       url: 'https://creativestheme.com'
     steps:
-      - name: 🚚 Get latest code
-      uses: actions/checkout@v2.3.2
-    
       - name: 📂 FTP Deploy to WP Server
         uses: SamKirkland/FTP-Deploy-Action@4.2.0
         with:
