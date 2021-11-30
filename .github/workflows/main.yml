@@ -1,4 +1,4 @@
-name: CI + CD
+name: Deploy RHR
 
 on:
   push:
@@ -33,7 +33,7 @@ jobs:
           server: 108.179.235.109
           username: ${{ secrets.ftp_username}}
           password: ${{ secrets.ftp_password }}
-          server-dir: /creativestheme.com/
+          server-dir: /
     
   DeployStagingOne:
     name: Deploy to Staging 
