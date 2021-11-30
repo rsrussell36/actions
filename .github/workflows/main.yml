@@ -44,8 +44,16 @@ jobs:
       name: Staging
       url: 'https://creativestheme.com/test'
     steps:
-      - name: Deploy
-        run: echo I am deploying! 
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v2.3.2
+
+      - name: 📂 FTP Deploy to WP Server
+        uses: SamKirkland/FTP-Deploy-Action@4.2.0
+        with:
+          server: 108.179.235.109
+          username: ${{ secrets.ftp_us}}
+          password: ${{ secrets.ftp_pass }}
+          server-dir: / 
             
   DeployProd:
     name: Deploy to Production 
@@ -55,6 +63,14 @@ jobs:
       name: Production
       url: 'https://creativestheme.com/test'
     steps:
-      - name: Deploy
-        run: echo I am deploying! 
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v2.3.2
+
+      - name: 📂 FTP Deploy to WP Server
+        uses: SamKirkland/FTP-Deploy-Action@4.2.0
+        with:
+          server: 108.179.235.109
+          username: ${{ secrets.ftp_us}}
+          password: ${{ secrets.ftp_pass }}
+          server-dir: / 
     
