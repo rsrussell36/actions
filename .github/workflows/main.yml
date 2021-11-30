@@ -33,7 +33,7 @@ jobs:
           server: 108.179.235.109
           username: ${{ secrets.ftp_username}}
           password: ${{ secrets.ftp_password }}
-          server-dir: /creativestheme.com/
+          
     
   DeployStaging:
     name: Deploy to Staging 
@@ -53,7 +53,7 @@ jobs:
           server: 108.179.235.109
           username: ${{ secrets.ftp_us}}
           password: ${{ secrets.ftp_pass }}
-          server-dir: / 
+          
             
   DeployProd:
     name: Deploy to Production 
@@ -72,5 +72,5 @@ jobs:
           server: 108.179.235.109
           username: ${{ secrets.ftp_us}}
           password: ${{ secrets.ftp_pass }}
-          server-dir: / 
+          
     
