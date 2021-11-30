@@ -33,10 +33,10 @@ jobs:
           server: 108.179.235.109
           username: ${{ secrets.ftp_username}}
           password: ${{ secrets.ftp_password }}
-          server-dir: /
+          server-dir: /creativestheme.com/
     
   DeployStagingOne:
-    name: Deploy to Staging 
+    name: Deploy to Staging One
     if: github.event.ref == 'refs/heads/main'
     needs: [DeployDev]
     runs-on: ubuntu-latest
@@ -56,7 +56,7 @@ jobs:
           server-dir: /
   
   DeployStagingTwo:
-    name: Deploy to Staging 
+    name: Deploy to Staging Two
     if: github.event.ref == 'refs/heads/main'
     needs: [DeployDev]
     runs-on: ubuntu-latest
@@ -76,7 +76,7 @@ jobs:
           server-dir: /
             
   DeployProdOne:
-    name: Deploy to Production 
+    name: Deploy to Production One
     needs: [DeployStagingOne]
     runs-on: ubuntu-latest
     environment: 
@@ -95,7 +95,7 @@ jobs:
           server-dir: / 
   
   DeployProdTwo:
-    name: Deploy to Production 
+    name: Deploy to Production Two
     needs: [DeployStagingTwo]
     runs-on: ubuntu-latest
     environment: 
