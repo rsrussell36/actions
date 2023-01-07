@@ -1,14 +1,19 @@
-on: push
-name: 🚀 Deploy website on push
+name: Deploy RHR
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
 jobs:
-  web-deploy:
-    name: 🎉 Deploy
+  Build:
     runs-on: ubuntu-latest
     steps:
-    - name: 🚚 Get latest code
-      uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Use Node.js 16
+      - name: Use Node.js 16
       uses: actions/setup-node@v2
       with:
         node-version: '16'
@@ -17,11 +22,67 @@ jobs:
       run: |
         npm install
         npm run build
+
+      - name: Compile
+        run: echo Hello, world!
     
-    - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.3.3
-      with:
-        server: 67.222.142.146
-        username: ${{ secrets.ftp_username}}
-        password: ${{ secrets.ftp_password }}
-        server-dir: /
+  DeployDev:
+    name: Deploy to Dev
+    needs: [Build]
+    runs-on: ubuntu-latest
+    environment: 
+      name: Development
+      url: 'https://html1.wpsent.com/'
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v2
+
+      - name: 📂 FTP Deploy to WP Server
+        uses: SamKirkland/FTP-Deploy-Action@4.3.3
+        with:
+          server: 67.222.142.146
+          username: ${{ secrets.ftp_username}}
+          password: ${{ secrets.ftp_password }}
+          server-dir: /
+    
+  DeployStagingOne:
+    name: Deploy to Staging One
+    if: github.event.ref == 'refs/heads/main'
+    needs: [DeployDev]
+    runs-on: ubuntu-latest
+    environment: 
+      name: HTML2
+      url: 'https://html2.wpsent.com/'
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v2
+
+      - name: 📂 FTP Deploy to WP Server
+        uses: SamKirkland/FTP-Deploy-Action@4.3.3
+        with:
+          server: 67.222.142.146
+          username: ${{ secrets.ftp_user_staging_one}}
+          password: ${{ secrets.ftp_pass_staging_one }}
+          server-dir: /html2.wpsent.com/
+  
+  DeployStagingTwo:
+    name: Deploy to Staging Two
+    if: github.event.ref == 'refs/heads/main'
+    needs: [DeployDev]
+    runs-on: ubuntu-latest
+    environment: 
+      name: HTML3
+      url: 'https://html3.wpsent.com/'
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v2
+
+      - name: 📂 FTP Deploy to WP Server
+        uses: SamKirkland/FTP-Deploy-Action@4.3.3
+        with:
+          server: 67.222.142.146
+          username: ${{ secrets.ftp_user_staging_two}}
+          password: ${{ secrets.ftp_pass_staging_two }}
+          server-dir: /html3.wpsent.com/
+            
+    
