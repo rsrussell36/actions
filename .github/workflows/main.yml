@@ -33,7 +33,7 @@ jobs:
           server: 67.222.142.146
           username: ${{ secrets.ftp_username}}
           password: ${{ secrets.ftp_password }}
-          server-dir: /html1.wpsent.com/
+          server-dir: /
     
   DeployStagingOne:
     name: Deploy to Staging One
