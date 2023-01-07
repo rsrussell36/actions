@@ -27,6 +27,9 @@ jobs:
       - name: 🚚 Get latest code
         uses: actions/checkout@v2
 
+      - name: Use Node.js 16
+      uses: actions/setup-node@v2
+
       - name: 📂 FTP Deploy to WP Server
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
         with:
