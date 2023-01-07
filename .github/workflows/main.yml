@@ -53,7 +53,7 @@ jobs:
           server: 67.222.142.146
           username: ${{ secrets.ftp_user_staging_one}}
           password: ${{ secrets.ftp_pass_staging_one }}
-          server-dir: /html2.wpsent.com/
+          server-dir: /
   
   DeployStagingTwo:
     name: Deploy to Staging Two
@@ -73,6 +73,6 @@ jobs:
           server: 67.222.142.146
           username: ${{ secrets.ftp_user_staging_two}}
           password: ${{ secrets.ftp_pass_staging_two }}
-          server-dir: /html3.wpsent.com/
+          server-dir: /
             
     
