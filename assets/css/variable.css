@@ -1,0 +1,10 @@
+/*font Variables*/
+/*Color Variables*/
+/*=================== fonts ====================*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@font-face {
+  font-family: "Cerebri Sans";
+  font-weight: 600;
+  src: url(../font/CerebriSansPro-SemiBold.woff);
+}
+/*# sourceMappingURL=variable.css.map */

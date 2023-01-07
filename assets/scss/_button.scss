@@ -1,62 +1,67 @@
-.video_btn_two {
-  display: flex;
-  align-items: center;
-  font-size: 14px;
+.hover_btn {
+  border-radius: 5px;
+  font-family: $paragraph-font-family;
   font-weight: 600;
-  color: $blue;
-  margin-left: 30px;
-  transition: color 0.2s linear;
-  .icon {
-    text-align: center;
-    width: 38px;
-    height: 38px;
-    border: 2px solid $blue;
-    border-radius: 50%;
-    font-size: 20px;
-    line-height: 38px;
-    color: $blue;
-    margin-right: 10px;
-    transition: all 0.2s;
+  font-size: 16px;
+  line-height: 40px;
+  text-align: center;
+  text-transform: capitalize;
+  display: inline-block;
+  padding: 6px 38px;
+  background-color: $persimmon-approx;
+  border: 0px;
+  color: $white;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.4s;
+  z-index: 1;
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: $black-approx;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 0;
+    transform: translate3d(-50%, -50%, 0) rotate(45deg);
+    transition: all 0.45s;
+    z-index: -1;
   }
   &:hover {
-    color: $black;
-    .icon {
-      background: $blue;
-      color: #fff;
+    color: $white;
+    &:before {
+      height: 400%;
+      z-index: -1;
     }
   }
 }
 
-.theme_btn {
-  font-size: 14px;
-  color: #fff;
-  background: $blue;
-  line-height: 30px;
-  border-radius: 45px;
-  padding: 15px 59px;
+.blue_btn {
+  font-weight: 500;
+  background: #3740ff;
+  &:before {
+    background: #545bf7;
+  }
+  i {
+    font-size: 10px;
+    margin-left: 5px;
+  }
+}
+
+.text_btn {
+  font-size: 18px;
+  letter-spacing: 0.01em;
+  color: #3740ff;
+  transition: all 0.2s;
   display: inline-block;
-  position: relative;
-  z-index: 1;
-  font-weight: 600;
-  box-shadow: 0px 10px 35px 0px rgba(48, 191, 255, 0.2);
-  transition: color 0.3s linear;
-  overflow: hidden;
-  span {
-    position: absolute;
-    display: block;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: #076cec;
-    transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
-    transform: translate(-50%, -50%);
-    z-index: -1;
+  font-weight: 500;
+  i {
+    font-size: 12px;
+    vertical-align: middle;
+    margin-left: 10px;
   }
   &:hover {
-    color: #fff;
-    span {
-      width: 60rem;
-      height: 60rem;
-    }
+    color: $persimmon-approx;
   }
 }

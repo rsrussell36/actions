@@ -1,0 +1,49 @@
+
+$paragraph-font-family: "Poppins", sans-serif;
+$ceb: "Cerebri Sans";
+$transition: 0.5s;
+$persimmon-approx: #ff5757;
+$paragraph-color: #7a7a7a;
+$black: #000000;
+$black-approx: #020202;
+$white: #ffffff;
+$silver-approx: #c4c4c4;
+$grayapprox-approx: #dfe2e7;
+$blue: #0000FF;
+$green: #00FF00;
+$concretesolid: #F2F2F2;
+$MineShaft: #333333;
+$DustyGray: #999999;
+$CodGray: #1a1a1a;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+@font-face {
+  font-family: "Cerebri Sans";
+  font-weight: 600;
+  src: url(../fonts/CerebriSansPro-SemiBold.woff);
+}
+
+@mixin transition(
+  $property: all,
+  $duration: 300ms,
+  $animate: linear,
+  $delay: 0s
+) {
+  transition: $property $duration $animate $delay;
+}
+
+@mixin placeholder {
+  &.placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &::-webkit-input-placeholder {
+    @content;
+  }
+}

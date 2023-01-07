@@ -1,80 +1,191 @@
-/*==========  footer css =========*/
-.footer_left {
-  background-image: linear-gradient(
-    130deg,
-    rgb(0, 88, 127) 0%,
-    rgb(68, 40, 122) 100%
-  );
-  padding: 172px 0px;
-}
-.footer_about_content {
-  max-width: 430px;
-  margin: 0 auto;
-  .f_logo {
-    display: inline-block;
-    margin-bottom: 25px;
-  }
-  p,
-  a,
-  .copyright_text {
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 14px;
-    line-height: 24px;
-    margin-bottom: 0;
-  }
-}
-.footer_menu {
-  padding: 27px 0px 10px;
-  li {
-    display: inline-block;
-    &:not(:last-child) {
-      margin-right: 36px;
+.footer {
+  &-area {
+    background: $CodGray;
+    p {
+      font-size: 14px;
+      font-weight: 400;
+      color: $white;
+      letter-spacing: 0.01em;
+      line-height: 28px;
     }
-    a {
-      color: #fff;
-      &:hover {
-        color: $blue;
+  }
+
+  &-widget {
+    .f-title {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 30px;
+      color: $white;
+      margin-bottom: 28px;
+    }
+  }
+  &-top {
+    padding-top: 100px;
+    padding-bottom: 50px;
+    .widget_navigate {
+      padding-left: 30px;
+    }
+    .widget_social {
+      margin-left: 70px;
+    }
+    .widget_about {
+      .f_logo {
+        margin-bottom: 30px;
+        display: inline-block;
       }
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &-navigation {
+    padding: 0;
+    li {
+      list-style: none;
+      margin-bottom: 6px;
+      a {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 30px;
+        color: $white;
+        letter-spacing: 0.01em;
+        @include transition;
+        &:hover {
+          color: $persimmon-approx;
+          i {
+            padding-right: 15px;
+          }
+        }
+        i {
+          padding-right: 10px;
+          @include transition;
+        }
+      }
+    }
+  }
+  &-social-icon {
+    padding: 0;
+    padding-top: 5px;
+    margin-bottom: 20px;
+    li {
+      display: inline-block;
+      list-style: none;
+      margin-right: 10px;
+      a {
+        color: $white;
+        height: 35px;
+        width: 35px;
+        background: $persimmon-approx;
+        display: inline-block;
+        text-align: center;
+        line-height: 35px;
+        font-size: 20px;
+        @include transition;
+        &:hover {
+          color: $persimmon-approx;
+          background: $white;
+        }
+      }
+    }
+  }
+  &-copyright {
+    text-align: center;
+    padding-bottom: 30px;
+    font-size: 14px;
+    line-height: 21px;
+    color: $white;
+    font-weight: 300;
+    a {
+      color: $white;
     }
   }
 }
 
-.footer_right {
-  background-image: linear-gradient(
-    130.876deg,
-    rgb(47, 38, 98) 0%,
-    rgb(101, 0, 94) 100%
-  );
-  padding: 172px 0px;
-}
-.footer_newsletter_widget {
-  max-width: 540px;
-  margin-left: 205px;
-}
-.newsletter_form {
-  .form-group {
-    margin-bottom: 0;
-    position: relative;
-    input {
-      width: 100%;
-      height: 60px;
-      background: rgba(255, 255, 255, 0.17);
-      border-radius: 45px;
-      border: 0px;
-      padding-left: 30px;
-      font-size: 12px;
-      color: #fff;
-      @include placeholder {
-        color: rgba(255, 255, 255, 0.17);
-        font-style: italic;
-      }
+.subscribe {
+  margin-top: 22px;
+  display: block;
+  input {
+    width: 100%;
+    height: 60px;
+    background: transparent;
+    color: $white;
+    border: 1px solid $MineShaft;
+    padding-left: 30px;
+    border-radius: 5px;
+    &:focus {
+      outline: none;
+      border: 1px solid $persimmon-approx;
+      box-shadow: none;
     }
-    button {
-      position: absolute;
-      right: 0;
-      top: 0;
-      border: 0px;
+    @include placeholder {
+      color: $DustyGray;
+    }
+  }
+  button {
+    background: $MineShaft;
+    margin-top: 10px;
+    margin-left: 0px;
+    border: none;
+    color: $white;
+    font-weight: 400;
+    font-size: 16px;
+    padding: 10px 35px;
+    letter-spacing: 0.01em;
+    border-radius: 5px;
+    text-transform: uppercase;
+    i {
+      margin-left: 8px;
+      font-size: 12px;
+    }
+    &:focus {
+      box-shadow: none;
+      outline: none;
     }
   }
 }
-/*==========  footer css =========*/
+.footer-top .subscriber2 p{
+  color: $white;
+}
+.subscriber2{
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    line-height: 28px;
+}
+.newsletter-form{
+  #validator-newsletter {
+    color: $persimmon-approx;
+    position: relative;
+    top: 8px;
+    font-size: 16px;
+    font-weight: 500;
+      &.validation-success{
+        color: $white;
+      }
+  }
+  .form-newsletter{
+    &.error{
+      display: block!important;
+    }
+  }
+}
+
+
+  #validator-subscriber {
+    top: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: left;
+      &.validation-success{
+        color: $black-approx;
+      }
+      &.validation-danger{
+        color: $persimmon-approx;
+      }
+  }
+  .form-subscriber, .sidebar-newsletter{
+    &.error{
+      display: block!important;
+    }
+  }

@@ -1,92 +1,115 @@
-/*----------------------------------------------------
-@File: Default Styles
-@Author: 
-@URL: 
-Author E-mail: 
+/*
+	Template Name: Avonee
+	Author: LastExpand
+	Author URI: https://themeforest.net/user/lastexpand
+	Description: Avonee
+    Version: 1.0.4
 
-This file contains the styling for the actual template, this
-is the file you need to edit to change the look of the
-template.
----------------------------------------------------- */
+=====================
+   Table of content 
+====================
 
-/*=====================================================================
-@Template Name: 
-@Author: 
-@Developed By: 
-@Developer URL: 
-Author E-mail: 
+1.   Typography
+2.   Variables
+3.   Predefine
+4.   Animation
+5.   Button
+6.   Preloader
+7.   Header
+8.   Feature
+9.   About
+10.  Testimonial
+11.  Teams
+12.  Faq
+13.  Project
+14.  Slider 
+15.  Blog
+16.  Searvice
+17.  Contact
+18.  Portfolio 
+19.  Portfolio Single
+20.  404 
+21.  Progressbar
+22.  Events 
+23.  Events Single
+24.  Pricing 
+25.  Breadcrumbs 
+26.  Footer 
+*/
 
-@Default Styles
+/*----------Variable----------*/
+@import "variable";
 
-Table of Content:
-01/ Variables
-02/ predefine
-03/ header
-04/ banner
-05/ about
-06/ portfolio
-07/ team
-08/ blog
-09/ service
-10/ blog
-11/ contact 
-12/ footer 
-
-
-=====================================================================*/
-
-/*----------------------------------------------------*/
-@import "variables";
-/*---------------------------------------------------- */
-
-/*----------------------------------------------------*/
+/*----------Predefine----------*/
 @import "predefine";
-/*---------------------------------------------------- */
 
-/*----------------------------------------------------*/
-@import "button";
-/*---------------------------------------------------- */
+/*----------Typography----------*/
+@import "typography";
 
-/*----------------------------------------------------*/
+/*----------Preloader----------*/
+@import "preloader";
+/*----------Header----------*/
 @import "header";
-/*---------------------------------------------------- */
 
-/*----------------------------------------------------*/
-@import "banner";
-/*---------------------------------------------------- */
+/*----------Feature----------*/
+@import "feature";
 
-/*----------------------------------------------------*/
-@import "about";
-/*---------------------------------------------------- */
-
-/*----------------------------------------------------*/
-@import "service";
-/*---------------------------------------------------- */
-
-/*----------------------------------------------------*/
-@import "clients-logo";
-/*---------------------------------------------------- */
-
-/*----------------------------------------------------*/
-@import "team";
-/*---------------------------------------------------- */
-
-/*----------------------------------------------------*/
-@import "portfolio";
-/*---------------------------------------------------- */
-
-/*----------------------------------------------------*/
-@import "blog";
-/*---------------------------------------------------- */
-
-/*----------------------------------------------------*/
-@import "contact";
-/*---------------------------------------------------- */
-
-/*----------------------------------------------------*/
+/*----------Animation----------*/
 @import "animation";
-/*---------------------------------------------------- */
 
-/*----------------------------------------------------*/
+/*----------Button----------*/
+@import "button";
+
+/*----------About----------*/
+@import "about";
+
+/*----------Testimonial----------*/
+@import "testimonial";
+
+/*----------Teams----------*/
+@import "teams";
+
+/*----------Faq----------*/
+@import "faqs";
+
+/*----------Slider----------*/
+@import "slider";
+
+/*----------Client----------*/
+@import "client";
+
+/*----------Blog----------*/
+@import "blog";
+
+/*----------Service----------*/
+@import "service";
+
+/*----------Portfolio----------*/
+@import "portfolio-grid";
+
+/*----------Portfolio Details----------*/
+@import "portfolio-details";
+
+/*----------Contact Us----------*/
+@import "contact";
+
+/*----------Error Page----------*/
+@import "404";
+
+/*----------Progressbar----------*/
+@import "progressbar";
+
+/*----------Events----------*/
+@import "events";
+
+/*----------Events Single----------*/
+@import "events-single";
+
+/*----------Pricing----------*/
+@import "picing";
+
+/*----------Breadcrumbs----------*/
+@import "breadcrumbs";
+
+/*----------Footer Area----------*/
 @import "footer";
-/*---------------------------------------------------- */

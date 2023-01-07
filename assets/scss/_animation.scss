@@ -1,10 +1,86 @@
-/*=========  custom animation css  =========*/
-@keyframes hvr-ripple-out {
+@keyframes cursorAnim {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.7);
+  }
+}
+
+@keyframes cursorAnim2 {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.4);
+  }
+}
+
+@keyframes videoAnim {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.6);
+  }
+}
+
+@keyframes videoAnim2 {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.4);
+  }
+}
+
+/*============ keyframes animation  =============*/
+@-webkit-keyframes v_pulse {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(1);
+  }
   100% {
-    top: -12px;
-    right: -12px;
-    bottom: -12px;
-    left: -12px;
     opacity: 0;
+    -webkit-transform: translate(-50%, -50%) scale(2);
+    transform: translate(-50%, -50%) scale(2);
+  }
+}
+@keyframes v_pulse {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -50%) scale(2);
+    transform: translate(-50%, -50%) scale(2);
+  }
+}
+
+@-webkit-keyframes switcherMoveUp {
+  0% {
+      opacity: 0;
+      -webkit-transform: translateY(25px);
+      transform: translateY(25px);
+  }
+  100% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+  }
+}
+@keyframes switcherMoveUp {
+  0% {
+      opacity: 0;
+      -webkit-transform: translateY(25px);
+      transform: translateY(25px);
+  }
+  100% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
   }
 }

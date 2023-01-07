@@ -1,0 +1,33 @@
+.error-404 {
+  &-area {
+    background: #ffe1d2;
+    padding: 122px 0 110px 0;
+  }
+  &-left {
+    align-self: center;
+    h2 {
+      font-size: 150px;
+      line-height: 160px;
+      text-transform: uppercase;
+      color: #ea472c;
+    }
+    p {
+      font-size: 25px;
+      line-height: 40px;
+      max-width: 400px;
+      color: #40464c;
+      margin-bottom: 50px;
+      font-weight: 400;
+    }
+    a {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 27px;
+      color: #ff4d6f;
+      text-transform: capitalize;
+      span {
+        margin-right: 10px;
+      }
+    }
+  }
+}
