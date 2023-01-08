@@ -1,4 +1,4 @@
-name: Deploy WpSent
+name: Deploy SpSent
 
 on:
   push:
@@ -6,19 +6,21 @@ on:
   pull_request:
     branches: [ main ]
   workflow_dispatch:
-
-
-jobs:
-  Build:
-    runs-on: ubuntu-latest
-    steps:
-      
   runs:
     using: 'node16'
     pre: 'setup.js'
     main: 'index.js'
     post: 'cleanup.js'
-  
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Compile
+        run: echo Hello, world!
+    
   DeployDev:
     name: Deploy to Development
     needs: [Build]
