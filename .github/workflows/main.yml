@@ -25,6 +25,9 @@ jobs:
       name: Development
       url: 'https://html1.wpsent.com/'
     steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v2
+
       - name: Use Node.js 16
         uses: actions/setup-node@v2
         with:
@@ -32,8 +35,9 @@ jobs:
       - name: 🔨 Build Project
         run: |
           npm install
-          npm run build  
-      - name: 📂 FTP Deploy to WP Server
+          npm run build
+          
+      - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
         with:
           server: 67.222.142.146
