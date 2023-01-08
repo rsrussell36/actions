@@ -6,6 +6,7 @@ on:
   pull_request:
     branches: [ main ]
   workflow_dispatch:
+  
 
 jobs:
   Build:
@@ -15,7 +16,12 @@ jobs:
 
       - name: Compile
         run: echo Hello, world!
-    
+  runs:
+    using: 'node16'
+    pre: 'setup.js'
+    main: 'index.js'
+    post: 'cleanup.js'
+  
   DeployDev:
     name: Deploy to Development
     needs: [Build]
