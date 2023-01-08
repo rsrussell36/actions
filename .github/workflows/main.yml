@@ -9,21 +9,12 @@ on:
 
 
 jobs:
-  Build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Compile
-        run: echo Hello, world!
-    
+  
   DeployDev:
     name: Deploy to Development
-    needs: [Build]
+ 
     runs-on: ubuntu-latest
-    environment: 
-      name: Development
-      url: 'https://html1.wpsent.com/'
+    
     steps:
       - name: 🚚 Get latest code
         uses: actions/checkout@v2
@@ -36,7 +27,7 @@ jobs:
         run: |
           npm install
           npm run build
-          
+
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
         with:
