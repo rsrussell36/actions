@@ -32,8 +32,9 @@ jobs:
         uses: airvzxf/ftp-deployment-action@latest
         with:
           server: 67.222.142.146
-          username: ${{ secrets.ftp_username}}
+          user: ${{ secrets.ftp_username}}
           password: ${{ secrets.ftp_password }}
-          server-dir: /
+          local_dir: "./Users/mac/www/actions"
+          remote_dir: /
     
   
