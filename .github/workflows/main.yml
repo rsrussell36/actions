@@ -1,35 +1,17 @@
-name: Deploy WpSent
-
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-  workflow_dispatch:
-
-
+name: Deploy via ftp
+on: push
 jobs:
-  Build:
+  deploy:
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Compile
-        run: echo Hello, world!
-    
-  DeployDev:
-    name: Deploy to Development
-    needs: [Build]
-    runs-on: ubuntu-latest
-   
-    steps:
-      - uses: actions/checkout@v2
-      - name: Upload ftp
+    - uses: actions/checkout@v2
+    - name: Upload ftp
       uses: sebastianpopp/ftp-action@releases/v2
-        with:
-          host: 67.222.142.146
-          user: ${{ secrets.FTP_USERNAME}}
-          password: ${{ secrets.FTP_PASSWORD }}
-          remoteDir: /
-    
-  
+      with:
+        host: 67.222.142.146
+        user: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        localDir: "dist"
+        remoteDir: "/"
+        options: "--delete --asci"
