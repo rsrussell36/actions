@@ -1,4 +1,4 @@
-name: Deploy SpSent
+name: Deploy WpSent
 
 on:
   push:
