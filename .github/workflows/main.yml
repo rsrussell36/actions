@@ -25,16 +25,13 @@ jobs:
       name: Development
       url: 'https://html1.wpsent.com/'
     steps:
-      - name: 🚚 Get latest code
-        uses: actions/checkout@v2
-
-    
-      - name: 📂 Sync files
-        uses: SamKirkland/FTP-Deploy-Action@4.3.3
+      - uses: actions/checkout@v2
+      - name: Upload ftp
+      uses: sebastianpopp/ftp-action@releases/v2
         with:
-          server: 67.222.142.146
-          username: ${{ secrets.ftp_username}}
-          password: ${{ secrets.ftp_password }}
-          server-dir: /
+          host: 67.222.142.146
+          user: ${{ secrets.FTP_USERNAME}}
+          password: ${{ secrets.FTP_PASSWORD }}
+          remoteDir: /
     
   
