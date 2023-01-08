@@ -6,11 +6,7 @@ on:
   pull_request:
     branches: [ main ]
   workflow_dispatch:
-  runs:
-    using: 'node16'
-    pre: 'setup.js'
-    main: 'index.js'
-    post: 'cleanup.js'
+  
 
 jobs:
   Build:
@@ -31,7 +27,10 @@ jobs:
     steps:
       - name: 🚚 Get latest code
         uses: actions/checkout@v2
-
+      - name: Use Node.js 16
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'  
       - name: 📂 FTP Deploy to WP Server
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
         with:
@@ -40,44 +39,4 @@ jobs:
           password: ${{ secrets.ftp_password }}
           server-dir: /
     
-  DeployHTMLTwo:
-    name: Deploy to HTML2
-    if: github.event.ref == 'refs/heads/main'
-    needs: [DeployDev]
-    runs-on: ubuntu-latest
-    environment: 
-      name: HTML2
-      url: 'https://html2.wpsent.com/'
-    steps:
-      - name: 🚚 Get latest code
-        uses: actions/checkout@v2
-
-      - name: 📂 FTP Deploy to WP Server
-        uses: SamKirkland/FTP-Deploy-Action@4.3.3
-        with:
-          server: 67.222.142.146
-          username: ${{ secrets.ftp_html_two}}
-          password: ${{ secrets.ftp_html_two_pass }}
-          server-dir: /
   
-  DeployHTMLThree:
-    name: Deploy to HTML3
-    if: github.event.ref == 'refs/heads/main'
-    needs: [DeployDev]
-    runs-on: ubuntu-latest
-    environment: 
-      name: HTML3
-      url: 'https://html3.wpsent.com/'
-    steps:
-      - name: 🚚 Get latest code
-        uses: actions/checkout@v2
-
-      - name: 📂 FTP Deploy to WP Server
-        uses: SamKirkland/FTP-Deploy-Action@4.3.3
-        with:
-          server: 67.222.142.146
-          username: ${{ secrets.ftp_html_three}}
-          password: ${{ secrets.ftp_html_three_pass }}
-          server-dir: /
-            
-    
