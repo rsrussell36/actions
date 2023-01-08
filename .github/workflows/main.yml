@@ -25,8 +25,6 @@ jobs:
       name: Development
       url: 'https://html1.wpsent.com/'
     steps:
-      - name: 🚚 Get latest code
-        uses: actions/checkout@v2
       - name: Use Node.js 16
         uses: actions/setup-node@v2
         with:
